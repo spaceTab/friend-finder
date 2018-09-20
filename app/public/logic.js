@@ -49,12 +49,12 @@ $(function () {
 
                     element.forEach(elem => {
                         let $cheeseDiv = $('<div class="friendmatch">');
-                        let $imageDiv = $('<div class="friendImg">');
-                        let cheese = elem.name;
-                        let url = elem.img;
+                        let $imageDiv  = $('<div class="friendImg">');
+                        let cheese     = elem.name;
+                        let url        = elem.img;
 
                         let banner = $('<h2>').text(cheese);
-                        let photo = $('<img>').attr('src', url)
+                        let photo  = $('<img>').attr('src', url)
 
                         $cheeseDiv.append(banner);
                         $imageDiv.append(photo);
