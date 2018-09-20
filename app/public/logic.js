@@ -3,6 +3,7 @@ $(function () {
     $('.submit').on('click', () => {
         event.preventDefault();
 
+        //function to make sure that form has been filled out
         const VALIDATE = () => {
 
             let isValid = true;
@@ -19,7 +20,7 @@ $(function () {
         }
 
         if (VALIDATE()) {
-            let usrData = {
+            let usrData = { //store user info as object
                 name: $('#name').val().trim(),
                 photo: $('#img').val().trim(),
             };

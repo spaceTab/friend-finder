@@ -2,13 +2,14 @@ const friends = require('../data/friends.js');
 
 const API_ROUTES = (app) => {
 
+    //get data from friends.js
     app.get('/api/friends', (req, res) => {
 
         res.json(friends);
     });
 
     app.post('/api/friends', (req, res) => {
-      
+        //grabs the users name / picture / score
         let usrData = req.body;
         let differences = [];
         
@@ -36,11 +37,13 @@ const API_ROUTES = (app) => {
 
             //finds the minum differnces
             for (let i = 0; i < differences.length; i++) {
-                if (differences[i] === minimum) bestMatches.push(friends[i]);
-                
+                if (differences[i] === minimum || differences[i] <= minimum){
+                     bestMatches.push(friends[i]);
+                }
             }
             res.json(bestMatches);
-
+        
+            //push user data to the friends array
         friends.push(usrData); 
     });
 };
