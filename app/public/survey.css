@@ -1,0 +1,10 @@
+body {
+    font-family: monospace;
+    font-weight: bolder !important;
+    background: url(./images/cheesepatt.jpg)
+}
+
+.name, .img {
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
