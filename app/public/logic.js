@@ -19,7 +19,6 @@ $(function () {
         }
 
         if (VALIDATE()) {
-            // objectifaction of cheese
             let usrData = {
                 name: $('#name').val().trim(),
                 photo: $('#img').val().trim(),
@@ -37,6 +36,7 @@ $(function () {
             let URL = window.location.origin;
             // console.log(URL);
 
+            //post request to send to apiRoutes -> sends user 
             $.post(`${URL}/api/friends`, usrData, (element) => {
                 if (element) {
                     $('.modal-content').empty();
@@ -61,17 +61,9 @@ $(function () {
 
                     });
 
-                    let $title = $(`<h3 class="title">`);
-                    // if (element.length > 1) {
-                    //     $title.text('Your best matches');
-                    //     $('.modal-content').prepend($title);
-                    // } else {
-                        // $title.text('Your best match!');
-                        // $('.modal-content').prepend($title);
-                    
-
-                    $title.text('Your best match!');
-                    $('.modal-content').prepend($title);
+                    let $modalHead = $(`<h3 class="modalHead">`);                   
+                    $modalHead.text('Your best match!');
+                    $('.modal-content').prepend($modalHead);
                 }
             });
         } else {
@@ -87,6 +79,3 @@ $(function () {
     M.AutoInit();
 
 });
-
-
-
